@@ -1,0 +1,61 @@
+﻿@inherits System.Web.Mvc.WebViewPage<DeanIS.YBSquare.WebSite.Models.LogOnModel>
+
+@{
+    View.Title = "Log On";
+    LayoutPage = "~/Views/Shared/_Layout.cshtml";
+}
+
+	<div id="header">
+		<h1>Join in on the fun!</h1>
+		<div id="intro">
+			<p>You know you want to!  So just do it! Fill out the form below!</p>
+			<img src="@Url.Content("~/Content/images/white940.gif")" alt="" id="wgo_topline" />
+			<img src="@Url.Content("~/Content/images/white940.gif")" alt="" id="wgo_bottomline" />
+		</div>
+	</div>
+
+	<div class="columns" style="min-height:150px">
+		<div class="column" id="columnA">
+			@Html.ValidationSummary(true, "Login was unsuccessful. Please correct the errors and try again.")
+
+			@using (Html.BeginForm()) {
+				<div id="control">
+					<div class="editor-label">
+						@Html.LabelFor(m => m.Email)
+					</div>
+					<div class="editor-field">
+						@Html.TextBoxFor(m => m.Email)
+						@Html.ValidationMessageFor(m => m.Email)
+					</div>
+					<br />
+					<div class="editor-label">
+						@Html.LabelFor(m => m.Password)
+					</div>
+					<div class="editor-field">
+						@Html.PasswordFor(m => m.Password)
+						@Html.ValidationMessageFor(m => m.Password)
+					</div>
+					<br />
+					<div class="editor-label">
+						@Html.CheckBoxFor(m => m.RememberMe)
+						@Html.LabelFor(m => m.RememberMe)
+					</div>
+
+					<p>
+						<input type="submit" value="Log On" class="button" />
+					</p>
+				</div>
+			}
+		</div>
+		<div class="column" id="columnB">
+			<p>
+				Please enter your username and password. @Html.ActionLink("Register", "Register") if you don't have an account.
+			</p>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="legal_container">
+			TM + &copy;2010 ybsquare, All rights reserved. <a href="/about">About</a> / <a href="/site_map">Site Map</a> / <a href="/guidelines">Community Guidelines</a> / <a href="/blog">Blog</a> / <a href="/terms" rel="nofollow">Terms of Service</a> / <a href="/privacy" rel="nofollow">Privacy Statement</a> / <a href="/help">Help Center</a>
+		</div>
+		<div class="clear"></div>
+	</div>

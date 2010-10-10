@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://yellowbook.com/YellowBookSearchResponseSchema/v2/5" elementFormDefault="qualified" targetNamespace="http://yellowbook.com/YellowBookSearchResponseSchema/v2/5" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="DetailResults" nillable="true" type="tns:BusinessDetailResults25" />
+  <xs:complexType name="BusinessDetailResults25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ErrorInformation" type="tns:Error25" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SessionInfo" type="tns:SessionInfo25" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Categories" type="tns:ArrayOfCategory25" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Listings" type="tns:ArrayOfListing25" />
+    </xs:sequence>
+    <xs:attribute name="Status" type="tns:StatusInfo25" use="required" />
+  </xs:complexType>
+  <xs:complexType name="Error25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="requestUrl" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="stackTrace" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="code" type="xs:string" />
+    <xs:attribute name="description" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="SessionInfo25">
+    <xs:attribute name="searchId" type="xs:string" />
+    <xs:attribute name="sessionId" type="xs:string" />
+    <xs:attribute name="visitorId" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfCategory25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Category" nillable="true" type="tns:Category25" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Category25">
+    <xs:attribute name="Id" type="xs:int" use="required" />
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="ListingCount" type="xs:float" use="required" />
+    <xs:attribute name="Relevancy" type="xs:float" use="required" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfListing25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Listing" nillable="true" type="tns:Listing25" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Listing25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AboutUs" type="tns:ArrayOfString" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Locations" type="tns:ArrayOfAddress25" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Brands" type="tns:ArrayOfString" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ContactInfo" type="tns:ContactInfo25" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CreditCards" type="tns:CreditCards25" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Hours" type="tns:Hours25" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Media" type="tns:Media25" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Reviews" type="tns:ReviewCollection25" />
+      <xs:element minOccurs="1" maxOccurs="1" name="HasTheaterVerticalData" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TheaterInfo" type="tns:TheaterInfo25" />
+      <xs:element minOccurs="1" maxOccurs="1" name="BusinessVerified" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="YearsInBusiness" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ChainName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Languages" type="tns:ArrayOfString" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Products" type="tns:ArrayOfString" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Services" type="tns:ArrayOfString" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SpecialServices" type="tns:ArrayOfString" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Other" type="tns:ArrayOfString" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Chains" type="tns:ArrayOfString" />
+      <xs:element minOccurs="0" maxOccurs="1" name="General" type="tns:ArrayOfString" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Certifications" type="tns:ArrayOfString" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Associations" type="tns:ArrayOfString" />
+      <xs:element minOccurs="1" maxOccurs="1" name="VideoscapeId" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CouponInfo" type="tns:CouponInfo25" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OpenTable" type="tns:OpenTable25" />
+    </xs:sequence>
+    <xs:attribute name="Categories" type="xs:string" />
+    <xs:attribute name="Distance" type="xs:string" />
+    <xs:attribute name="ListingId" type="xs:long" use="required" />
+    <xs:attribute name="ListingType" type="xs:string" />
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Relevancy" type="xs:float" use="required" />
+    <xs:attribute name="TagLine" type="xs:string" />
+    <xs:attribute name="VirtualDomainUrl" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfString">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Bullet" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfAddress25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Location" nillable="true" type="tns:Address25" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Address25">
+    <xs:attribute name="Address1" type="xs:string" />
+    <xs:attribute name="Address2" type="xs:string" />
+    <xs:attribute name="AddressId" type="xs:int" use="required" />
+    <xs:attribute name="City" type="xs:string" />
+    <xs:attribute name="FreeText" type="xs:string" />
+    <xs:attribute name="NatsMatchListingId" type="xs:long" use="required" />
+    <xs:attribute name="Phone" type="xs:string" />
+    <xs:attribute name="State" type="xs:string" />
+    <xs:attribute name="Zip" type="xs:string" />
+    <xs:attribute name="Latitude" type="xs:string" />
+    <xs:attribute name="Longitude" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ContactInfo25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Websites" type="tns:ArrayOfWebsite25" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SecondaryNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MobileNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OfficeNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="HomeNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AfterHoursNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DataNumber" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="EmailAddresses">
+      <xs:simpleType>
+        <xs:list itemType="xs:string" />
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="FaxNumber" type="xs:string" />
+    <xs:attribute name="TollFreeNumber" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfWebsite25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Website" nillable="true" type="tns:Website25" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Website25">
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Url" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="CreditCards25">
+    <xs:attribute name="AmericanExpress" type="xs:boolean" use="required" />
+    <xs:attribute name="CarteBlanche" type="xs:boolean" use="required" />
+    <xs:attribute name="Custom" type="xs:boolean" use="required" />
+    <xs:attribute name="Diners" type="xs:boolean" use="required" />
+    <xs:attribute name="Discover" type="xs:boolean" use="required" />
+    <xs:attribute name="MasterCard" type="xs:boolean" use="required" />
+    <xs:attribute name="Visa" type="xs:boolean" use="required" />
+  </xs:complexType>
+  <xs:complexType name="Hours25">
+    <xs:attribute name="Friday" type="xs:string" />
+    <xs:attribute name="Monday" type="xs:string" />
+    <xs:attribute name="Saturday" type="xs:string" />
+    <xs:attribute name="Sunday" type="xs:string" />
+    <xs:attribute name="Text" type="xs:string" />
+    <xs:attribute name="Thursday" type="xs:string" />
+    <xs:attribute name="Tuesday" type="xs:string" />
+    <xs:attribute name="Wednesday" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="Media25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="VideoAd" type="tns:VideoAd25" />
+    </xs:sequence>
+    <xs:attribute name="BookScanUrl" type="xs:string" />
+    <xs:attribute name="LogoUrl" type="xs:string" />
+    <xs:attribute name="MenuUrl" type="xs:string" />
+    <xs:attribute name="VideoscapeUrl" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="VideoAd25">
+    <xs:attribute name="Mp4Url" type="xs:string" />
+    <xs:attribute name="SwfUrl" type="xs:string" />
+    <xs:attribute name="Thumb" type="xs:string" />
+    <xs:attribute name="WmvUrl" type="xs:string" />
+    <xs:attribute name="VideoAdCaption" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ReviewCollection25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Review" type="tns:Review25" />
+    </xs:sequence>
+    <xs:attribute name="AverageReviewScore" type="xs:float" use="required" />
+    <xs:attribute name="TotalNumberOfRatings" type="xs:int" use="required" />
+    <xs:attribute name="TotalNumberOfReviews" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="Review25">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractReviewItem25">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Comments" type="tns:ArrayOfComment25" />
+          <xs:element minOccurs="0" maxOccurs="1" name="UserInfo" type="tns:UserInfo25" />
+        </xs:sequence>
+        <xs:attribute name="Rating" type="xs:int" use="required" />
+        <xs:attribute name="Title" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AbstractReviewItem25">
+    <xs:attribute name="DateCreated" type="xs:dateTime" use="required" />
+    <xs:attribute name="ReviewItemId" type="xs:string" />
+    <xs:attribute name="Content" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="Comment25">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractReviewItem25">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="UserInfo" type="tns:UserInfo25" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="UserInfo25">
+    <xs:attribute name="UserName" type="xs:string" />
+    <xs:attribute name="DisplayName" type="xs:string" />
+    <xs:attribute name="EID" type="xs:string" />
+    <xs:attribute name="AuthenticationType" type="tns:UserInfoAuthenticationTypeEnumMaster" use="required" />
+    <xs:attribute name="FacebookId" type="xs:string" />
+  </xs:complexType>
+  <xs:simpleType name="UserInfoAuthenticationTypeEnumMaster">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FacebookConnect" />
+      <xs:enumeration value="MyYellowbook" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ArrayOfComment25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Comment" nillable="true" type="tns:Comment25" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TheaterInfo25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Amenities" type="tns:ArrayOfTheaterAmenitiesEnum25" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Movies" type="tns:ArrayOfMovieInfo25" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ShowDates" type="tns:ArrayOfString8" />
+    </xs:sequence>
+    <xs:attribute name="TheaterName" type="xs:string" />
+    <xs:attribute name="Screens" type="xs:int" use="required" />
+    <xs:attribute name="Seating" type="xs:string" />
+    <xs:attribute name="SoundSystem" type="xs:string" />
+    <xs:attribute name="PricingAdult" type="xs:string" />
+    <xs:attribute name="PricingChild" type="xs:string" />
+    <xs:attribute name="PricingSenior" type="xs:string" />
+    <xs:attribute name="PricingAdultBargain" type="xs:string" />
+    <xs:attribute name="PricingComment" type="xs:string" />
+    <xs:attribute name="TicketingViaMovieTicketsDotCom" type="xs:boolean" use="required" />
+    <xs:attribute name="Comments" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTheaterAmenitiesEnum25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Amenity" type="tns:TheaterAmenitiesEnum25" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="TheaterAmenitiesEnum25">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WheelchairAccessible" />
+      <xs:enumeration value="THXCertifiedTheater" />
+      <xs:enumeration value="CafeOnPremises" />
+      <xs:enumeration value="PrintAtHomeTicketing" />
+      <xs:enumeration value="KioskForTicketPickup" />
+      <xs:enumeration value="StadiumSeating" />
+      <xs:enumeration value="GameRoomOnPremises" />
+      <xs:enumeration value="ListeningDevicesAvailable" />
+      <xs:enumeration value="PreferredParkingAvailable" />
+      <xs:enumeration value="PartyRoomAvailable" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ArrayOfMovieInfo25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Movie" nillable="true" type="tns:MovieInfo25" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MovieInfo25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Photos" type="tns:ArrayOfString1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="HiResPhotos" type="tns:ArrayOfString2" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Genres" type="tns:ArrayOfString3" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Cast" type="tns:ArrayOfString4" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReleaseDates" type="tns:ArrayOfMovieReleaseDate25" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Producers" type="tns:ArrayOfString5" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Writers" type="tns:ArrayOfString6" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Synopsis" type="tns:ArrayOfString7" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CriticalReview" type="tns:ArrayOfString7" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ShowDates" type="tns:ArrayOfMovieShowDate25" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BuyTicketsUrl" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="MovieId" type="xs:string" />
+    <xs:attribute name="MPAARating" type="xs:string" />
+    <xs:attribute name="MPAAAdvisory" type="xs:string" />
+    <xs:attribute name="Director" type="xs:string" />
+    <xs:attribute name="RunningTime" type="xs:int" use="required" />
+    <xs:attribute name="WebSite" type="xs:string" />
+    <xs:attribute name="Distributor" type="xs:string" />
+    <xs:attribute name="Stars" type="xs:float" use="required" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfString1">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Photo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfString2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HiResPhoto" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfString3">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Genre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfString4">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Member" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfMovieReleaseDate25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReleaseDate" nillable="true" type="tns:MovieReleaseDate25" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MovieReleaseDate25">
+    <xs:attribute name="Notes" type="xs:string" />
+    <xs:attribute name="DisplayDate" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfString5">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Producer" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfString6">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Writer" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfString7">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Paragraph" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfMovieShowDate25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ShowDate" nillable="true" type="tns:MovieShowDate25" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MovieShowDate25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ShowTimes" type="tns:ArrayOfMovieShowTime25" />
+    </xs:sequence>
+    <xs:attribute name="Date" type="xs:string" />
+    <xs:attribute name="ShowAttributes" type="xs:string" />
+    <xs:attribute name="ShowPasses" type="xs:boolean" use="required" />
+    <xs:attribute name="ShowFestival" type="xs:boolean" use="required" />
+    <xs:attribute name="Sound" type="xs:string" />
+    <xs:attribute name="Comments" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfMovieShowTime25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ShowTime" nillable="true" type="tns:MovieShowTime25" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MovieShowTime25">
+    <xs:attribute name="DiscountedTicketPrice" type="xs:boolean" use="required" />
+    <xs:attribute name="Time" type="xs:string" />
+    <xs:attribute name="BuyTicketsUrl" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfString8">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ShowDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CouponInfo25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Coupons" type="tns:ArrayOfCoupon25" />
+      <xs:element minOccurs="1" maxOccurs="1" name="HasCoupon" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfCoupon25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Coupon" nillable="true" type="tns:Coupon25" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Coupon25">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="HasCoupon" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DefaultRenderingHtml" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Expiration" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Offer" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Restrictions" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Provider" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Url" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Thumbnail" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OpenTable25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="RestaurantID" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReservationUrl" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MobileReservationUrl" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="StatusInfo25">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ok" />
+      <xs:enumeration value="NoResultsFound" />
+      <xs:enumeration value="UnhandledException" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SearchResults" nillable="true" type="tns:BusinessSearchResults25" />
+  <xs:complexType name="BusinessSearchResults25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ErrorInformation" type="tns:Error25" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Refinements" type="tns:Refinements25" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SearchInfo" type="tns:SearchInfo25" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AlsoServingListings" type="tns:ListingSummaryCollection25" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Banner" type="tns:Banner25" />
+      <xs:element minOccurs="0" maxOccurs="1" name="InAreaListings" type="tns:ListingSummaryCollection25" />
+    </xs:sequence>
+    <xs:attribute name="Status" type="tns:StatusInfo25" use="required" />
+  </xs:complexType>
+  <xs:complexType name="Refinements25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PopularTerms" type="tns:ArrayOfString9" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ExpandLocations" type="tns:ArrayOfString10" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Filters" type="tns:ArrayOfFilterGroup25" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NarrowLocations" type="tns:ArrayOfString10" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AlphaFilter" type="tns:AlphaFilter25" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfString9">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Term" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfString10">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Where" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfFilterGroup25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Filter" nillable="true" type="tns:FilterGroup25" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FilterGroup25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="FilterItems" type="tns:ArrayOfFilterItem25" />
+    </xs:sequence>
+    <xs:attribute name="ParameterName" type="xs:string" />
+    <xs:attribute name="Title" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfFilterItem25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FilterItem" nillable="true" type="tns:FilterItem25" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FilterItem25">
+    <xs:attribute name="Count" type="xs:int" use="required" />
+    <xs:attribute name="ParameterValue" type="xs:string" />
+    <xs:attribute name="Title" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="AlphaFilter25">
+    <xs:attribute name="ParameterName" type="xs:string" />
+    <xs:attribute name="ParameterValue" type="xs:string" />
+    <xs:attribute name="Title" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="SearchInfo25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SessionInfo" type="tns:SessionInfo25" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Categories" type="tns:ArrayOfCategory25" />
+    </xs:sequence>
+    <xs:attribute name="ExpandedLocation" type="xs:string" />
+    <xs:attribute name="GeoExpanded" type="xs:boolean" use="required" />
+    <xs:attribute name="OriginalLocation" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ListingSummaryCollection25">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Listing" type="tns:Listing25" />
+    </xs:sequence>
+    <xs:attribute name="TotalListings" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="Banner25">
+    <xs:attribute name="DestinationUrl" type="xs:string" />
+    <xs:attribute name="MediaType" type="tns:MediaType25" use="required" />
+    <xs:attribute name="MediaUrl" type="xs:string" />
+  </xs:complexType>
+  <xs:simpleType name="MediaType25">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Image" />
+      <xs:enumeration value="Flash" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,138 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7,chrome=1" />
+	<meta name="viewport" content="width=1024,maximum-scale=1.0" />
+	<meta name="description" content="YBSquare" />
+    <title>@View.Title</title>
+    <link href="@Url.Content("~/Content/style/site.css")" rel="stylesheet" type="text/css" />
+<!--[if gte IE 7]>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/style/ie7.css")" />
+<![endif]-->
+
+<!--[if lte IE 6]>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/style/ie6.css")" />
+    <script type="text/javascript" src="@Url.Content("~/scripts/ie6.js")"></script>
+<![endif]-->
+
+	<script type="text/javascript" src="@Url.Content("~/scripts/homepage.js")"></script>		
+</head>
+
+<body>
+      <input type="hidden" id="xsrft" class="xsrft" name="token" value="a64e92f75eeaa4e2cf9a2f99fcca286f" />
+        
+		<img src="@Url.Content("~/Content/images/smoke.png")" id="lightbox_wrapper" class="lightbox_wrapper" style="display:none;" alt="" />
+		<div id="lightbox"></div>
+		
+		<div id="outer_wrap">
+	<div id="inner_wrap">
+		<div id="everything">
+			<div id="top">
+				<div id="logo"><a href="/"><img src="@Url.Content("~/Content/images/logo_ybsquare_land.png")" alt="ybsquare" /></a></div>
+				<div id="newmenudo">
+    <div id="capright" class="menudo_image"></div>
+    <ul id="nav" class="grandpappy">
+        <li class="firstborn search" id="menudo_search_subtier">
+            <div class="rounded_input">
+                <div class="contain menudo_image">
+                    <form action="/places/" method="get" onsubmit="menudo_search(); return false;">
+                        <input name="search" id="menudo_search_field" type="text" onblur="menudo_search_blur()" onclick="menudo_search_click()" value="Find places, people, tags" class="field"  autocomplete="off" maxlength="50" />
+                        <input type="submit" value="" onclick="menudo_search(); return false;" class="button" />
+                    </form>
+                </div>
+            </div>
+            <ul class="dotted favoritechild menudo_subtier">
+                <li id="menudo_search_places" class="first selected first">
+                    <a href="javascript:void(0)" onclick="menudo_search_change('Places')">Search Places</a>
+                    <div class="left_shoulder menudo_image"></div>
+                    <div class="right_shoulder menudo_image"></div>
+                </li>
+                <li id="menudo_search_people" class=""><a href="javascript:void(0)" onclick="menudo_search_change('People')">Search People</a></li>
+                <li id="menudo_search_tags" class=""><a href="javascript:void(0)" onclick="menudo_search_change('Tags')">Search Tags</a></li>
+                <li style="margin-top: 0px; background: transparent;">
+                    <div class="cheek_left menudo_image"></div>
+                    <div class="cheek_fill"></div>
+                    <div class="cheek_right menudo_image"></div>
+                </li>
+            </ul>
+                    </li>
+        <li class="firstborn help">
+            <a class="label" href="/help">Help</a>
+            <ul class="dotted favoritechild">
+                <li class="first">
+                    <div class="left_shoulder menudo_image"></div>
+                    <div class="right_shoulder menudo_image"></div>
+                    <a href="/help">Help Center</a>
+                </li>
+                <li><a href="/help/basics">ybsquare Basics</a></li>
+                <li><a href="/guidelines">Community Guidelines</a></li>
+                <li><a href="/forums">Community Forums</a></li>
+                <li class="last"><a href="/api">Developers</a></li>
+                <li style="margin-top: 0px; background: transparent;">
+                    <div class="cheek_left menudo_image"></div>
+                    <div class="cheek_fill"></div>
+                    <div class="cheek_right menudo_image"></div>
+                </li>
+            </ul>
+        </li>
+        <li class="firstborn explore" id="menudo_explore">
+            <a href="/explore" class="label">Explore</a>
+            <ul class="favoritechild dotted">
+                <li class="first">
+                    <a href="/categories">Categories</a>
+                    <div class="left_shoulder menudo_image"></div>
+                    <div class="right_shoulder menudo_image"></div>
+                </li>
+                <li><a href="/staffpicks">Staff Picks</a></li>
+                <li><a href="/forum:ybsquare_projects">Projects</a></li>
+                <li class="last"><a href="/toys">Toys</a></li>
+                <li style="margin-top: 0px; background: transparent;">
+                    <div class="cheek_left menudo_image"></div>
+                    <div class="cheek_fill"></div>
+                    <div class="cheek_right menudo_image"></div>
+                </li>
+            </ul>
+        </li>
+        <li class="firstborn login">
+			@if(!Request.IsAuthenticated) {
+				<a class="label" href="/Account/LogOn" rel="nofollow">Log In</a>
+			}
+			else {
+				<a class="label" href="/Account/Logoff" rel="nofollow" style>Log Off</a>
+			}
+        </li>
+        <li class="firstborn join">
+			@if(!Request.IsAuthenticated) {
+				<a href="/Account/Register" title="join ybsquare"><div class="joinimage loggedout"></div></a>
+			}
+			else {
+				<div class="welcomebackimage loggedin"></div>
+			}
+        </li>
+    </ul>
+</div>			</div>
+			
+							<div id="cap" class="native"></div>
+				
+			<div id="main">
+				@RenderBody()
+			</div>
+</div>        
+        <script type="text/javascript">
+    var fivesquare_startup = {
+        domain: '.fivesquare.com',
+        fivesquare_url: 'fivesquare.com'
+    };
+</script>
+
+<script type="text/javascript">
+    var cur_search_type = 'Places';
+    EventCenter.fire('domready');
+</script>
+
+</body>
+</html>

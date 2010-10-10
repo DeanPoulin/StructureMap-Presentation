@@ -1,0 +1,151 @@
+﻿@inherits System.Web.Mvc.WebViewPage<DeanIS.YBSquare.WebSite.Models.HomeModel>
+
+@{
+    View.Title = "ybsquare";
+    LayoutPage = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="header">
+	<h1>Check-In / Find Your Friends / Get Free Stuff</h1>
+	<div id="intro">
+		<p>ybsquare is fun to use, find your friends, and the best part, you get free stuff!</p><p>See for yourself and <a href="/join" rel="nofollow">Join today!</a></p>
+		<img src="@Url.Content("~/Content/images/white940.gif")" alt="" id="wgo_topline" />
+		<img src="@Url.Content("~/Content/images/white940.gif")" alt="" id="wgo_bottomline" />
+	</div>
+</div>
+		
+<div class="columns">
+	<div class="column" id="columnA">
+		<div id="tabs">
+			<ul>
+				<li class="active">
+					<div id="videos" class="softcorner native tab" style="background-color: #f4f4ee; -moz-border-radius-topleft: 10px; -webkit-border-top-left-radius: 10px; border-top-left-radius: 10px; -moz-border-radius-topright: 10px; -webkit-border-top-right-radius: 10px; border-top-right-radius: 10px; " onclick="tab_stream(this);">Places we like</div>
+                </li>
+				<li>
+					<div id="explore" class="softcorner native tab" style="background-color: #f4f4ee; -moz-border-radius-topleft: 10px; -webkit-border-top-left-radius: 10px; border-top-left-radius: 10px; -moz-border-radius-topright: 10px; -webkit-border-top-right-radius: 10px; border-top-right-radius: 10px; " onclick="tab_stream(this);">Explore</div>
+                </li>
+				<li>
+					<div id="activity" class="softcorner native tab" style="background-color: #f4f4ee; -moz-border-radius-topleft: 10px; -webkit-border-top-left-radius: 10px; border-top-left-radius: 10px; -moz-border-radius-topright: 10px; -webkit-border-top-right-radius: 10px; border-top-right-radius: 10px; " onclick="tab_stream(this);">Right now</div>
+                </li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+						
+        <div id="content_wrapper" class="softcorner native" style="background-color: #e6e6dc; -moz-border-radius-topright: 15px; -webkit-border-top-right-radius: 15px; border-top-right-radius: 15px; -moz-border-radius-bottomright: 15px; -webkit-border-bottom-right-radius: 15px; border-bottom-right-radius: 15px; -moz-border-radius-bottomleft: 15px; -webkit-border-bottom-left-radius: 15px; border-bottom-left-radius: 15px; " >
+            <div id="stream_loading" style="display:none;">Loading...</div>
+		<div id="videos_content">
+			<div id="videos_meat" class="softcorner native" style="background-color: #ffffff; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; " >
+		<div class="fivesquare_holder">
+			<div id="fivesquare_player_14074949" class="player" style="width:560px;height:312px;">
+				<object width="580" height="327"><param name="movie" value="http://www.youtube.com/v/N4rfzYul9O8?fs=1&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/N4rfzYul9O8?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="580" height="327"></embed></object>
+			</div>
+		</div>
+
+
+						
+		<div id="clips">
+			<ul class="videos">
+				@foreach (var p in Model.Places) {
+					<li class="top">
+						<a href="/Places/@p.Id">
+							<div class="thumbnail">
+
+								@if(p.Address != null && p.Address.HasLatLong) {
+									<img src="@Url.Content(string.Format("http://www.yellowbook.com/listing-map.png?lat={0}&long={1}", p.Address.DLatitude, p.Address.DLongitude))" width="125" height="94" alt="" />
+								}
+								else {
+									<img src="@Url.Content("http://www.yellowbook.com/images/qi_map_loading.gif?appVersion=4")" width="125" height="94" alt="" />
+								}
+
+							</div>
+						</a>
+						<div class="digest">
+							<h3><a href="/Places/@p.Id">@p.Name</a></h3>
+							<div class="description">
+
+							<span>
+								<span class="street-address">@p.Address.Address1</span>
+								<span class="locality">@p.Address.City</span>
+								<span class="commaSep">,</span>
+								<span class="region">@p.Address.State</span>
+								<span class="postal-code">@p.Address.ZipCode</span>
+							</span>
+
+							@if (Request.IsAuthenticated) {
+								using (Html.BeginForm("CheckIn", "Places")) {
+									<input type="hidden" name="placeId" value="@p.Id" />
+									<input type="submit" value="Check In" />
+								}
+							}
+							</div>
+							<div class="stat"><span class="likes"><strong>1</strong> checkins</span></div>
+						</div>
+
+						<div class="clear"></div>
+					</li>
+				}
+			</ul>
+
+ 
+<div class="pagination">
+	<ul>
+			<li class="selected">1</li>
+	
+
+			
+		
+					<li><a href="javascript:void(0)" onclick="page_home_videos(2); return false;" >2</a></li>
+				
+		
+					<li><a href="javascript:void(0)" onclick="page_home_videos(3); return false;" >3</a></li>
+				
+		
+					<li><a href="javascript:void(0)" onclick="page_home_videos(4); return false;" >4</a></li>
+				
+		
+					<li><a href="javascript:void(0)" onclick="page_home_videos(5); return false;" >5</a></li>
+				
+		
+					<li><a href="javascript:void(0)" onclick="page_home_videos(6); return false;" >6</a></li>
+				
+		
+					<li><a href="javascript:void(0)" onclick="page_home_videos(7); return false;" >7</a></li>
+				
+		
+					<li><a href="javascript:void(0)" onclick="page_home_videos(8); return false;" >8</a></li>
+				
+		
+					<li><a href="javascript:void(0)" onclick="page_home_videos(9); return false;" >9</a></li>
+				
+		
+					<li><a href="javascript:void(0)" onclick="page_home_videos(10); return false;" >10</a></li>
+				
+		
+			<li class="dots">...</li>
+			
+
+			<li><a href="javascript:void(0)" onclick="page_home_videos(38); return false;" >38</a></li>
+		
+		<li class="arrow"><a href="javascript:void(0)" onclick="page_home_videos(2); return false;" ><img src="@Url.Content("~/Content/images/page_arrow_next_on.gif")" alt="next" /></a></li>		
+		</ul>
+	<div class="clear"></div>
+</div>
+
+									</div></div>							</div>
+					
+							<div id="explore_content" style="display:none;"></div>					
+							<div id="activity_content" style="display:none;"></div></div>					</div>
+			
+					<div class="column" id="columnB">
+						<a href="/join" rel="nofollow"><img src="@Url.Content("~/Content/images/btn_signup.png")" alt="Sign up for ybsquare" class="signup" width="300" height="50" /></a>
+					</div>
+			
+					<div class="clear"></div>
+				</div>
+		
+				<div id="footer">
+					<div class="legal_container">
+						TM + &copy;2010 ybsquare, All rights reserved. <a href="/about">About</a> / <a href="/site_map">Site Map</a> / <a href="/guidelines">Community Guidelines</a> / <a href="/blog">Blog</a> / <a href="/terms" rel="nofollow">Terms of Service</a> / <a href="/privacy" rel="nofollow">Privacy Statement</a> / <a href="/help">Help Center</a>
+					</div>
+					<div class="clear"></div>
+				</div>

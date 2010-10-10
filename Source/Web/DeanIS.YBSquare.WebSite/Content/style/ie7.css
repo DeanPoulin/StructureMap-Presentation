@@ -1,0 +1,69 @@
+v\:roundrect  { display: block; height: 100%; behavior: url(#default#VML); /background-color: transparent; }
+
+#itemtitle { line-height: 38px; padding: 20px 0px 6px 0px; margin: 0px 20px 1px 20px; }
+
+#dvd_steps { width: 1320px; }
+
+#rainbow .moor-overlayBox { margin-left: -59px; }
+#rainbow .moor-hexLabel { margin-left: 5px; }
+#rainbow .moor-chooseColor { margin-left: 40px; }
+
+.forage .forage_panel .blue_button { position: relative; bottom: 2px; }
+.forage .forage_right .forage_buttonhole { padding-top: 0px; }
+#header .pagers .paginate input { height:20px; padding-bottom: 12px; }
+div.sortbar div.indicator img { top: 20px; }
+.clipcontrols li { margin-right: 7px; }
+#share_input { padding-bottom: 0px; }
+
+#share_area .message textarea { width: 408px; }
+.forage ul.forage_bucket { margin-top: 7px; }
+
+#itemtitle { line-height: 38px; padding: 20px 0px 6px 0px; margin: 0px 20px 1px 20px; }
+.album_header #itemtitle { line-height: 38px; padding: 0px 0px 6px 0px; margin: 0px 0px 1px 0px; }
+
+.insides .message { left: 20px; }
+
+.clipcontrols li { padding-left: 8px; }
+
+#album_listing .album_thumb .album_icon img { display: none; }
+
+#forage #forage_search_input { width: 253px; }
+#forage #forage_panel .blue_button { position: relative; bottom: 2px; }
+#forage #forage_right #forage_buttonhole { padding-top: 0px; }
+
+#stats { margin-bottom: 30px; }
+
+#progress_bar_container img.browserounder { display: none; }
+
+.help_bubble { height: 1%; }
+.help_bubble_bottom { bottom: -1px; }
+
+.plus_graphic, .staff_graphic { position:static; top:auto; }
+
+/* rounded corners */
+div.corner_tl, div.corner_tr, div.corner_bl, div.corner_br { overflow: hidden; }
+
+/* ie 7 */
+#rainbow .moor-okButton { *width: 50px; }
+.insides .message { *left: 90px; }
+
+/* home page */
+.so_soft { *padding-top: 5px; }
+#muadib .softcorner { *padding-top: 5px; *background-color: #fff; }
+#stream_wrap .obiwan { margin-top: 20px !important; }
+
+/* messages */
+#columnA div.obiwan { margin-top: 14px; }
+#columnA div.obiwan div.nipple { top: -24px; left: 20px; }
+
+/* channels */
+#grid #columnA { margin-right:19px; }
+#grid #columnA #module #clips ol li { margin-right:25px; }
+#gallery #clips #brozar_container #brozar_clips ol li { margin-right:18px; }
+#gallery #clips #brozar_container #brozar_clips { position:static; }
+
+/* menudo */
+#newmenudo .upload .cheek_fill { width: 150px; }
+
+/* help page */
+.ask_box { margin-top: 15px; }

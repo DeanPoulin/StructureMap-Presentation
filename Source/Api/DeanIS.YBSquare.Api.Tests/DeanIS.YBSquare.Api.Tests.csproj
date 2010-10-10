@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{53361F2C-D66B-4967-94E3-4752B557C543}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DeanIS.YBSquare.Api.Tests</RootNamespace>
+    <AssemblyName>DeanIS.YBSquare.Api.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\..\shared\lib\Moq.4.0.10827\NET40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\shared\lib\NUnit-2.5.7.10213\net-2.0\framework\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\shared\lib\mvc-3.0\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Apis\YellowbookServiceSpec.cs" />
+    <Compile Include="Api\Controllers\PlacesControllerSpec.cs" />
+    <Compile Include="Net\DigestAuthenticationClientSpec.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\shared\DeanIS.Framework.Testing\DeanIS.Framework.Testing.csproj">
+      <Project>{AAD0107A-7863-44B9-B0FB-4F624712B99A}</Project>
+      <Name>DeanIS.Framework.Testing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\shared\DeanIS.Net.Apis\DeanIS.Net.Apis.csproj">
+      <Project>{684FDA49-7C57-42CB-A985-EDD3BFE8F635}</Project>
+      <Name>DeanIS.Net.Apis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\shared\DeanIS.Net\DeanIS.Net.csproj">
+      <Project>{38EAE05A-870D-402A-80EB-CC828B3CECB6}</Project>
+      <Name>DeanIS.Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\shared\DeanIS.Web.Mvc\DeanIS.Web.Mvc.csproj">
+      <Project>{8530CF8D-2599-49A0-B312-C26FCFFED96B}</Project>
+      <Name>DeanIS.Web.Mvc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\shared\DeanIS.YBSquare.DataTypes\DeanIS.YBSquare.Api.DataTypes.csproj">
+      <Project>{0609AC99-D234-400F-A9C0-D4F474927C06}</Project>
+      <Name>DeanIS.YBSquare.Api.DataTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DeanIS.YBSquare.Api\DeanIS.YBSquare.Api.csproj">
+      <Project>{430C2413-3D50-4427-88E4-72D701076B7F}</Project>
+      <Name>DeanIS.YBSquare.Api</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

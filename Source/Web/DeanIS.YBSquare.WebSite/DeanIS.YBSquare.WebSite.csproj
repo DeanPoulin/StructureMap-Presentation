@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3B905D48-A4BF-4A8A-BD43-833A2D6FB87D}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DeanIS.YBSquare.WebSite</RootNamespace>
+    <AssemblyName>DeanIS.YBSquare.WebSite</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\shared\lib\mvc-3.0\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PlacesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChangePasswordModel.cs" />
+    <Compile Include="Models\HomeModel.cs" />
+    <Compile Include="Models\LogOnModel.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
+    <Compile Include="Models\Validation\AccountValidation.cs" />
+    <Compile Include="Models\Validation\PropertiesMustMatchAttribute.cs" />
+    <Compile Include="Models\Validation\ValidatePasswordLengthAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="YBSquareHttpModule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\images\1226588_30.jpg" />
+    <Content Include="Content\images\57481615_200.jpg" />
+    <Content Include="Content\images\69029946_200.jpg" />
+    <Content Include="Content\images\81956031_200.jpg" />
+    <Content Include="Content\images\89217924_200.jpg" />
+    <Content Include="Content\images\92126976_200.jpg" />
+    <Content Include="Content\images\92585851_200.jpg" />
+    <Content Include="Content\images\92857183_200.jpg" />
+    <Content Include="Content\images\92910905_200.jpg" />
+    <Content Include="Content\images\assets\thumbnails\defaults\default.94x125.jpg" />
+    <Content Include="Content\images\bg_vfa_ad_bottom.gif" />
+    <Content Include="Content\images\bg_vfa_ad_top.gif" />
+    <Content Include="Content\images\browser_dropdown_bg.gif" />
+    <Content Include="Content\images\btn_signup.png" />
+    <Content Include="Content\images\btn_signup_basic.png" />
+    <Content Include="Content\images\btn_signup_basic_on.png" />
+    <Content Include="Content\images\btn_signup_plus.png" />
+    <Content Include="Content\images\btn_signup_plus_on.png" />
+    <Content Include="Content\images\btn_vfa_buytickets.gif" />
+    <Content Include="Content\images\dots_bebabb.gif" />
+    <Content Include="Content\images\dotted.gif" />
+    <Content Include="Content\images\dotted_divider_vertical.gif" />
+    <Content Include="Content\images\dotted_e7.gif" />
+    <Content Include="Content\images\dotted_featured_video.gif" />
+    <Content Include="Content\images\error_hand.gif" />
+    <Content Include="Content\images\events_bg.gif" />
+    <Content Include="Content\images\events_extra_row_bg.gif" />
+    <Content Include="Content\images\fruitstripe.png" />
+    <Content Include="Content\images\home_community.gif" />
+    <Content Include="Content\images\home_dotted.gif" />
+    <Content Include="Content\images\home_plus.gif" />
+    <Content Include="Content\images\home_quality.gif" />
+    <Content Include="Content\images\icon_avatar_contact.gif" />
+    <Content Include="Content\images\icon_avatar_message.gif" />
+    <Content Include="Content\images\icon_avatar_nipple.gif" />
+    <Content Include="Content\images\icon_avatar_subscribe.gif" />
+    <Content Include="Content\images\icon_embed_autoplay_alert.gif" />
+    <Content Include="Content\images\icon_embed_desc_alert.gif" />
+    <Content Include="Content\images\icon_embed_loop_alert.gif" />
+    <Content Include="Content\images\icon_embed_settings_alert.gif" />
+    <Content Include="Content\images\icon_embed_size_alert.gif" />
+    <Content Include="Content\images\icon_hd_embed_off.gif" />
+    <Content Include="Content\images\icon_hd_embed_on.gif" />
+    <Content Include="Content\images\icon_share_delicious.gif" />
+    <Content Include="Content\images\icon_share_digg.gif" />
+    <Content Include="Content\images\icon_share_facebook.gif" />
+    <Content Include="Content\images\icon_share_flickr.gif" />
+    <Content Include="Content\images\icon_share_myspace.gif" />
+    <Content Include="Content\images\icon_share_stumbleupon.gif" />
+    <Content Include="Content\images\icon_share_twitter.gif" />
+    <Content Include="Content\images\join_basic_hover.png" />
+    <Content Include="Content\images\join_plus_4995_hover.png" />
+    <Content Include="Content\images\join_plus_hover.png" />
+    <Content Include="Content\images\join_plus_v1_hover.png" />
+    <Content Include="Content\images\join_plus_v2_hover.png" />
+    <Content Include="Content\images\land_center.png" />
+    <Content Include="Content\images\land_left_right.png" />
+    <Content Include="Content\images\land_sun.gif" />
+    <Content Include="Content\images\lightbox_plus_icon.gif" />
+    <Content Include="Content\images\logo_fivesquare_land.png" />
+    <Content Include="Content\images\logo_regular_size.png" />
+    <Content Include="Content\images\logo_vimeo_land.png" />
+    <Content Include="Content\images\logo_vimeo_land2.png" />
+    <Content Include="Content\images\logo_ybsquare_land.png" />
+    <Content Include="Content\images\moor_arrows.gif" />
+    <Content Include="Content\images\moor_cursor.gif" />
+    <Content Include="Content\images\page_arrow_next_on.gif" />
+    <Content Include="Content\images\phome_summary_bg.gif" />
+    <Content Include="Content\images\rounder_10_e6e6dc_ffffff.png" />
+    <Content Include="Content\images\share_foot.gif" />
+    <Content Include="Content\images\sign_up_footer_basic_hover.png" />
+    <Content Include="Content\images\sign_up_footer_plus_hover.png" />
+    <Content Include="Content\images\smoke.png" />
+    <Content Include="Content\images\sortbar_bg_e7e7dd.gif" />
+    <Content Include="Content\images\sprite_explore.png" />
+    <Content Include="Content\images\sprite_menudo3.png" />
+    <Content Include="Content\images\sprite_toolbar.png" />
+    <Content Include="Content\images\stat_heart.gif" />
+    <Content Include="Content\images\tri_right.gif" />
+    <Content Include="Content\images\vdotted_e7.gif" />
+    <Content Include="Content\images\white940.gif" />
+    <Content Include="Content\images\world_button.gif" />
+    <Content Include="Content\images\world_input.gif" />
+    <Content Include="Content\images\world_land.jpg" />
+    <Content Include="Content\images\world_sun.gif" />
+    <Content Include="Content\images\world_sun_rays.gif" />
+    <Content Include="Scripts\homepage.js" />
+    <Content Include="Scripts\ie6.js" />
+    <Content Include="Content\style\ie6.css" />
+    <Content Include="Content\style\ie7.css" />
+    <Content Include="Content\style\site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Views\Home\WebForm1.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\shared\DeanIS.Net\DeanIS.Net.csproj">
+      <Project>{38EAE05A-870D-402A-80EB-CC828B3CECB6}</Project>
+      <Name>DeanIS.Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\shared\DeanIS.YBSquare.DataTypes\DeanIS.YBSquare.Api.DataTypes.csproj">
+      <Project>{0609AC99-D234-400F-A9C0-D4F474927C06}</Project>
+      <Name>DeanIS.YBSquare.Api.DataTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DeanIS.YBSquare.Web\DeanIS.YBSquare.Web.csproj">
+      <Project>{F77A3AC2-F59D-4373-B7C3-A0980147E5BD}</Project>
+      <Name>DeanIS.YBSquare.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\LogOn.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Register.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\PlacePartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Places\CheckIn.cshtml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>47805</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

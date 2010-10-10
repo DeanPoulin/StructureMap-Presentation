@@ -1,0 +1,28 @@
+﻿@inherits System.Web.Mvc.WebViewPage<dynamic>
+
+@{
+    View.Title = "CheckIn";
+    LayoutPage = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="header">
+	<h1>Check-In</h1>
+	<div id="intro">
+		<p>You Just Checked In!</p>
+		<img src="@Url.Content("~/Content/images/white940.gif")" alt="" id="wgo_topline" />
+		<img src="@Url.Content("~/Content/images/white940.gif")" alt="" id="wgo_bottomline" />
+	</div>
+</div>
+		
+<div class="columns" style="min-height:300px">
+	<div class="column" id="columnA">
+		Thanks!
+	</div>
+</div>
+<div id="footer">
+	<div class="legal_container">
+		TM + &copy;2010 ybsquare, All rights reserved. <a href="/about">About</a> / <a href="/site_map">Site Map</a> / <a href="/guidelines">Community Guidelines</a> / <a href="/blog">Blog</a> / <a href="/terms" rel="nofollow">Terms of Service</a> / <a href="/privacy" rel="nofollow">Privacy Statement</a> / <a href="/help">Help Center</a>
+	</div>
+	<div class="clear"></div>
+</div>
+

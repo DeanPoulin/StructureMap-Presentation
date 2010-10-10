@@ -1,0 +1,64 @@
+﻿@inherits System.Web.Mvc.WebViewPage<DeanIS.YBSquare.WebSite.Models.RegisterModel>
+
+@{
+    View.Title = "Register";
+    LayoutPage = "~/Views/Shared/_Layout.cshtml";
+}
+
+	<div id="header">
+		<h1>Create a New Account</h1>
+		<div id="intro">
+			<p>You know you want to!  So just do it! Use the form below to create a new account.</p>
+			<img src="@Url.Content("~/Content/images/white940.gif")" alt="" id="wgo_topline" />
+			<img src="@Url.Content("~/Content/images/white940.gif")" alt="" id="wgo_bottomline" />
+		</div>
+	</div>
+
+	<div class="columns" style="min-height:150px">
+		<div class="column" id="columnA">
+			@using (Html.BeginForm()) {
+				@Html.ValidationSummary(true, "Account creation was unsuccessful. Please correct the errors and try again.")
+				<div>
+					<div class="editor-label">
+						@Html.LabelFor(m => m.Email)
+					</div>
+					<div class="editor-field">
+						@Html.TextBoxFor(m => m.Email)
+						@Html.ValidationMessageFor(m => m.Email)
+					</div>
+					<br />
+					<div class="editor-label">
+						@Html.LabelFor(m => m.Password)
+					</div>
+					<div class="editor-field">
+						@Html.PasswordFor(m => m.Password)
+						@Html.ValidationMessageFor(m => m.Password)
+					</div>
+					<br />
+					<div class="editor-label">
+						@Html.LabelFor(m => m.ConfirmPassword)
+					</div>
+					<div class="editor-field">
+						@Html.PasswordFor(m => m.ConfirmPassword)
+						@Html.ValidationMessageFor(m => m.ConfirmPassword)
+					</div>
+					<br />
+					<p>
+						<input type="submit" value="Register" />
+					</p>
+				</div>
+			}
+		</div>
+		<div class="column" id="columnB">
+			<p>
+				Passwords are required to be a minimum of @View.PasswordLength characters in length.
+			</p>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="legal_container">
+			TM + &copy;2010 ybsquare, All rights reserved. <a href="/about">About</a> / <a href="/site_map">Site Map</a> / <a href="/guidelines">Community Guidelines</a> / <a href="/blog">Blog</a> / <a href="/terms" rel="nofollow">Terms of Service</a> / <a href="/privacy" rel="nofollow">Privacy Statement</a> / <a href="/help">Help Center</a>
+		</div>
+		<div class="clear"></div>
+	</div>
+
